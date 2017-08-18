@@ -299,7 +299,7 @@ function makeAlbumItem(imageItem) {
         li.classList.remove('loading');
     };
 
-    imgLink.href = imageItem.link;
+    imgLink.href = imageItem.link.replace('http:', 'https:');
 
     imgLink.onclick = function (e) {
     	e.preventDefault();
@@ -371,7 +371,7 @@ function makeAlbumItem(imageItem) {
         };
 
         copyInput.type = 'text';
-        copyInput.value = imageItem.link;
+        copyInput.value = imageItem.link.replace('http:', 'https:');
 
         meme.href = "https://imgur.com/memegen/create/" + imageItem.id;
         meme.innerHTML = "meme";
@@ -427,7 +427,7 @@ function makeAlbumItem(imageItem) {
             li.setAttribute('data-deletehash', imageItem.deletehash);
         }
 
-        download.href = imageItem.link;
+        download.href = imageItem.link.replace('http:', 'https:');
 		download.setAttribute("download", imageItem.id);
         download.innerHTML = "download";
         download.classList.add('image-download');
